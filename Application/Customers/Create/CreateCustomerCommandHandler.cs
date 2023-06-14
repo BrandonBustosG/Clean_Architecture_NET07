@@ -37,7 +37,7 @@ internal sealed class CreateCustomerCommandHandler : IRequestHandler<CreateCusto
             true
         );
         await _customerRepository.Add(customer);
-        await _unitOfWork.SaveChanesAsync(cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
         return Unit.Value;
     }
 }
