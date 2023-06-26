@@ -16,8 +16,7 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
     }
 
     public DbSet<Customer> Customers { get ; set ; }
-    DbSet<Customer> IApplicationDbContext.Customers { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
