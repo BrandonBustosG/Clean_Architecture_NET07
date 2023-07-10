@@ -20,6 +20,8 @@ if (app.Environment.IsDevelopment())
     app.ApplyMigrations();
 }
 
+app.UseExceptionHandler("/error");
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
