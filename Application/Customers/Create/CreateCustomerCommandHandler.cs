@@ -38,7 +38,7 @@ public sealed class CreateCustomerCommandHandler : IRequestHandler<CreateCustome
 			address,
 			true
 		);
-		 _customerRepository.Add(customer);
+		_customerRepository.Add(customer);
 		await _unitOfWork.SaveChangesAsync(cancellationToken);
 		return Unit.Value;
 	}
